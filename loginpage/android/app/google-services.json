@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559822351028",
+    "project_id": "my-vaibhav-project",
+    "storage_bucket": "my-vaibhav-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559822351028:android:8938c8b750fd5b7a8445e1",
+        "android_client_info": {
+          "package_name": "com.example.loginpage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm9aZs4J09SIz38yQWQy-ic9vEBdGKXQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
