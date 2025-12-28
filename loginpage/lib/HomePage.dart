@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:loginpage/DisplayPage.dart';
 
 class Homepage extends StatefulWidget {
+ 
    Homepage({super.key});
 
   @override
@@ -9,6 +11,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+    List<QueryDocumentSnapshot> userData=[];
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
@@ -29,6 +32,7 @@ class _HomepageState extends State<Homepage> {
         .delete();
         print("data deleted");
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +80,7 @@ class _HomepageState extends State<Homepage> {
                   return  CircularProgressIndicator();
                 }
                 else{
+                  userData=snapshot.data!.docs;
                 return ListView(
                   children: snapshot.data!.docs.map((doc) {
                     return ListTile(
@@ -89,6 +94,11 @@ class _HomepageState extends State<Homepage> {
               },
             ),
           ),
+         
+          SizedBox(height: 40,),
+          ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Displaypage(data: userData),));
+          }, child: Text("go to next"))
         ],
       ),
     );
